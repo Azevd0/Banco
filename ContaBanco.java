@@ -111,12 +111,15 @@ public class ContaBanco {
 	public void depositar() {
 		System.out.println("Quanto você quer depositar?");
 		int deposito = scan.nextInt();
-		if (deposito > getSaldo()) {
-			System.out.println("Erro, depósito além do limite de saldo.");
-		} else {
-			int posDeposito = getSaldo() + deposito;
+		if(tipo == 1) {
+			int posDeposito = getSaldo() + deposito + 50;
+			System.out.println("Você depositou " + deposito + " Seu saldo atual é " + posDeposito);
+		} else if (tipo == 2) {
+			int posDeposito = getSaldo() + deposito + 150;
 			System.out.println("Você depositou " + deposito + " Seu saldo atual é " + posDeposito);
 		}
+			
+		
 	}
 
 	public void sacar() {
